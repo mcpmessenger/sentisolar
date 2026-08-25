@@ -3,8 +3,21 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'SentiSolar — Solar potential, calculated instantly.',
-  description: 'Discover the solar potential of your home with a custom roof report from SentiSolar.',
+  title: 'SentiSolar | Instant AI Solar Roof Analysis',
+  description: 'Get an instant, custom solar report for your roof powered by Senti AI and Google Solar mapping. Calculate your exact solar potential and battery needs in seconds.',
+  keywords: ['solar', 'solar potential', 'roof analysis', 'AI solar', 'solar estimator', 'home battery', 'SentiSolar'],
+  openGraph: {
+    title: 'SentiSolar | Instant AI Solar Roof Analysis',
+    description: 'Get an instant, custom solar report for your roof powered by AI.',
+    url: 'https://sentisolar.com',
+    siteName: 'SentiSolar',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SentiSolar | Instant AI Solar Roof Analysis',
+    description: 'Calculate your exact solar potential and battery needs in seconds.',
+  },
   generator: 'v0.app',
 }
 
