@@ -56,7 +56,7 @@ function HomeView({ setView }: { setView: (view: 'home' | 'admin') => void }) {
         
         // Hacky but effective auto-hangup if the AI says goodbye
         if (msg.source === 'ai' && msg.message.toLowerCase().includes("have a great day")) {
-          setTimeout(() => conversation.endSession(), 3500) // wait 3.5s for audio to finish
+          setTimeout(() => conversation.endSession(), 7000) // wait 3.5s for audio to finish
         }
       }
     },
@@ -311,6 +311,7 @@ export default function Page() {
     <AdminView setView={setView} />
   )
 }
+
 
 
 
