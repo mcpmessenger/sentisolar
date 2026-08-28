@@ -37,6 +37,9 @@ function HomeView({ setView }: { setView: (view: 'home' | 'admin') => void }) {
   const [address, setAddress] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
+  const [isHomeowner, setIsHomeowner] = useState(true)
+  const [monthlyBill, setMonthlyBill] = useState('')
+  const [creditQualified, setCreditQualified] = useState(true)
   const [complete, setComplete] = useState(false)
   const [transcript, setTranscript] = useState<{source: string, text: string} | null>(null)
 
@@ -316,6 +319,7 @@ export default function Page() {
     <AdminView setView={setView} />
   )
 }
+
 
 
 
