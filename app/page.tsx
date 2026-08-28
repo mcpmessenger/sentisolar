@@ -122,7 +122,7 @@ function HomeView({ setView }: { setView: (view: 'home' | 'admin') => void }) {
       <section className="mx-auto flex min-h-[calc(100vh-80px)] max-w-6xl flex-col items-center px-6 pb-6 pt-10 text-center md:pt-14">
         <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-muted">A clearer path to solar</p>
         <h1 className="max-w-3xl text-balance text-5xl font-semibold leading-[1.03] tracking-[-0.065em] text-navy md:text-7xl">Solar potential,<br /><span className="text-navy/55">calculated instantly.</span></h1>
-        <p className="mt-5 max-w-lg text-sm leading-6 text-muted">Share an address and our AI will instantly query Google's LIDAR database. We analyze your exact roof topography and shading to calculate your maximum panel capacity, 400W system size, and algorithmic home battery recommendations.</p>
+        <p className="mt-5 max-w-lg text-sm leading-6 text-muted">Share an address and our AI will instantly query Google's LIDAR database. We analyze your exact roof topography and shading to calculate your maximum panel capacity and solar potential using Google's Solar API.</p>
 
         <div className="mt-8 flex w-full max-w-xl flex-col items-center justify-center px-4 md:mt-10 md:px-0">
           <div className={`w-full text-left transition-opacity duration-500 ${complete ? 'opacity-60' : 'opacity-100'}`}>
