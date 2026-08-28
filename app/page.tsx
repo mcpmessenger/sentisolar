@@ -117,7 +117,9 @@ function HomeView({ setView }: { setView: (view: 'home' | 'admin') => void }) {
     <main className="min-h-screen bg-paper text-navy">
       <header className="flex items-center justify-between px-6 py-4 md:px-12 lg:px-16">
         <Brand />
-        
+        <a href="tel:8562194352" className="flex items-center gap-2 rounded-full border border-navy/15 px-4 py-2 text-xs font-semibold text-navy transition-colors hover:bg-navy/5">
+          ?? (856) 219-4352
+        </a>
       </header>
       <section className="mx-auto flex min-h-[calc(100vh-80px)] max-w-6xl flex-col items-center px-6 pb-6 pt-10 text-center md:pt-14">
         <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-muted">A clearer path to solar</p>
