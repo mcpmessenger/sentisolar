@@ -89,7 +89,7 @@ function HomeView({ setView }: { setView: (view: 'home' | 'admin') => void }) {
   }
   const submitEmail = async (event: React.FormEvent) => {
     event.preventDefault()
-    if (email.trim()) {
+    if (email.trim() && phone.trim()) {
       // 1. Save lead to Supabase
       const { error } = await supabase.from('leads').insert([{
         address,
@@ -313,6 +313,7 @@ export default function Page() {
     <AdminView setView={setView} />
   )
 }
+
 
 
 
