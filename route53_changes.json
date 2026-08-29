@@ -1,0 +1,31 @@
+{
+  "Comment": "Add Vercel DNS records for sentisolar.com",
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "sentisolar.com.",
+        "Type": "A",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "76.76.21.21"
+          }
+        ]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "www.sentisolar.com.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "cname.vercel-dns.com"
+          }
+        ]
+      }
+    }
+  ]
+}
