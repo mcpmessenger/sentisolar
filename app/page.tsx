@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useMemo, useState, useEffect } from 'react'
 import { createClient } from '@supabase/supabase-js'
@@ -230,7 +230,7 @@ function HomeView({ setView }: { setView: (view: 'home' | 'admin') => void }) {
           </span>
         </div>
       </section>
-    <footer className="w-full text-center py-8 border-t border-line text-xs text-muted mt-12 bg-paper"><a href="/privacy" className="hover:underline mr-4">Privacy Policy</a><a href="/terms" className="hover:underline">Terms & Conditions</a></footer>
+    <footer className="w-full text-center py-8 border-t border-line text-xs text-muted mt-12 bg-paper"><a href="/privacy" className="hover:underline mr-4">Privacy Policy</a><a href="/terms" className="hover:underline">Terms &amp; Conditions</a></footer>
 </main>
   )
 }
@@ -285,7 +285,7 @@ function AdminView({ setView }: { setView: (view: 'home' | 'admin') => void }) {
           </div>
         </section>
       </div>
-    <footer className="w-full text-center py-8 border-t border-line text-xs text-muted mt-12 bg-paper"><a href="/privacy" className="hover:underline mr-4">Privacy Policy</a><a href="/terms" className="hover:underline">Terms & Conditions</a></footer>
+    <footer className="w-full text-center py-8 border-t border-line text-xs text-muted mt-12 bg-paper"><a href="/privacy" className="hover:underline mr-4">Privacy Policy</a><a href="/terms" className="hover:underline">Terms &amp; Conditions</a></footer>
 </main>
   )
 }
@@ -327,7 +327,7 @@ function AdminLogin({ setView, onLogin }: { setView: (view: 'home' | 'admin') =>
           </button>
         </form>
       </div>
-    <footer className="w-full text-center py-8 border-t border-line text-xs text-muted mt-12 bg-paper"><a href="/privacy" className="hover:underline mr-4">Privacy Policy</a><a href="/terms" className="hover:underline">Terms & Conditions</a></footer>
+    <footer className="w-full text-center py-8 border-t border-line text-xs text-muted mt-12 bg-paper"><a href="/privacy" className="hover:underline mr-4">Privacy Policy</a><a href="/terms" className="hover:underline">Terms &amp; Conditions</a></footer>
 </main>
   )
 }
