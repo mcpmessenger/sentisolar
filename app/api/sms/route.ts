@@ -3,35 +3,35 @@ import { NextResponse } from 'next/server';
 export async function POST(req: Request) {
   try {
     const formData = await req.formData();
-    const incomingMsg = formData.get('Body');
-    const fromNumber = formData.get('From');
+    const incomingMsg = formData.get('Body') as string;
+    const fromNumber = formData.get('From') as string;
     
     if (!incomingMsg) {
       return new NextResponse('<Response></Response>', { status: 400, headers: { 'Content-Type': 'text/xml' } });
     }
 
-    const systemPrompt = You are Elise, a National Solar Advisor for SentiSolar. 
-Your goal is to soft-qualify homeowners for -down Power Purchase Agreements (PPAs) or Cash/Loan solar options. 
+    const systemPrompt = `You are Elise, a National Solar Advisor for SentiSolar. 
+Your goal is to soft-qualify homeowners for $0-down Power Purchase Agreements (PPAs) or Cash/Loan solar options. 
 Keep your texts extremely brief, conversational, and human-like (1 to 2 short sentences max). You are texting, not writing emails. Do not use hashtags, robotic formatting, or bullet points. Act like a real person texting from a phone.
 Qualifying criteria to gather naturally over the chat:
 1. Are they the homeowner?
-2. Is their electric bill over /mo?
+2. Is their electric bill over $100/mo?
 3. Is their credit score roughly 650 or higher?
 If they object to PPA and want to buy cash/loan, enthusiastically agree. 
-Once they meet all criteria, tell them a Senior Advisor will call them shortly.;
+Once they meet all criteria, tell them a Senior Advisor will call them shortly.`;
 
     // Fetch reply from OpenAI
     const openAiRes = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': Bearer 
+        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
       },
       body: JSON.stringify({
         model: 'gpt-4o-mini',
         messages: [
           { role: 'system', content: systemPrompt },
-          { role: 'user', content: incomingMsg.toString() }
+          { role: 'user', content: incomingMsg }
         ],
         max_tokens: 100,
         temperature: 0.7
@@ -46,7 +46,7 @@ Once they meet all criteria, tell them a Senior Advisor will call them shortly.;
     }
 
     // Generate TwiML response for Twilio
-    const twiml = <?xml version="1.0" encoding="UTF-8"?><Response><Message></Message></Response>;
+    const twiml = `<?xml version="1.0" encoding="UTF-8"?><Response><Message>${replyText}</Message></Response>`;
     
     return new NextResponse(twiml, {
       status: 200,
