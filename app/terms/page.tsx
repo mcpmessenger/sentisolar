@@ -21,6 +21,9 @@ export default function TermsAndConditions() {
 
       <h2 className="text-xl font-semibold mt-8 mb-4">3. Contact</h2>
       <p className="mb-4">For support, email us at support@sentisolar.com.</p>
+
+      <h2 className="text-xl font-semibold mt-8 mb-4">4. Third Party Data Sharing</h2>
+      <p className="mb-4 font-bold">No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
     </div>
   );
 }
